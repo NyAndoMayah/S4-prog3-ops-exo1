@@ -1,21 +1,17 @@
 Resources:
   MyBucket:
-    Type: !Sub '{{resolve:ssm:/arn}}'
+    Type: 'AWS::S3::Bucket'
     Parameters:
-      BucketName: !Sub '{{resolve:ssm:/name}}'
+      BucketName: STD21039
   SSMNAME:
     Type: 'AWS::SSM::Parameter'
     Parameters:
-      Name: !Join 
-        - ''
-        - - /name
+      Name: /name
       Type: String
-      Value: STD21039
+      Value: !Ref MyBucket
   SSMARN:
     Type: 'AWS::SSM::Parameter'
     Parameters:
-      Name: !Join 
-        - ''
-        - - /arn
+      Name: /arn
       Type: String
-      Value: 'AWS::S3::Bucket'
+      Value: !GettAt MyBucket.Arn
