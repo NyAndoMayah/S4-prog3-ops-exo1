@@ -1,0 +1,5 @@
+Resources:
+  STD21039:
+    Type: 'AWS::S3::Bucket'
+    Properties: {}
+    
