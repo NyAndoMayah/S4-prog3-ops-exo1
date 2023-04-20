@@ -3,7 +3,7 @@ name: CD
 on:
   push:
     branches:
-      - 'dev'
+      - "dev"
     workflow_dispatch:
 
 jobs:
@@ -22,4 +22,4 @@ jobs:
 
       - name: Deploy
         run: |
-        aws cloudformation create-stack --stack-name PROG3-OPS-exo1 --template-body file://PROG3-OPS-exo1.yaml
+          aws cloudformation create-stack --stack-name PROG3-OPS-exo1 --template-body file://PROG3-OPS-exo1.yaml
