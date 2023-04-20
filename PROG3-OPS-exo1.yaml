@@ -3,13 +3,13 @@ Resources:
     Type: "AWS::S3::Bucket"
     Properties:
       BucketName: std21039
-  SSMName:
+  SSMNAME:
     Type: "AWS::SSM::Parameter"
     Properties:
       Name: /name
       Type: String
       Value: !Ref MyBucket
-  SSMArn:
+  SSMARN:
     Type: "AWS::SSM::Parameter"
     Properties:
       Name: /arn
